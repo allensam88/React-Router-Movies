@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Movie = (props) => {
+  var url = props.match.url;
   const [movie, setMovie] = useState(null);
  
   useEffect(() => {
@@ -18,7 +19,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[]);
+  },[url]);
 
   // Uncomment this only when you have moved on to the stretch goals
   const saveMovie = () => {
